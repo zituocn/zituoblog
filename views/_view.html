@@ -1,0 +1,30 @@
+{{template "header"}}
+<title>{{.info.Title}} - 阿布分享</title>
+</head>
+<body>
+{{template "nav"}}
+<div class="box">
+	<div class="info">
+    	<div class="title">{{.info.Title}}</div>
+        <div class="text">
+          {{str2html .info.Content}}      
+        </div>
+	    <div class="about"><span>作者：{{.info.Anthor}}</span><span>来源：{{.info.Source}}</span><span>时间：{{dateformat .info.Addtime "2006-01-02 15:04"}}</span></div>
+    </div>
+</div>
+<script type="text/javascript" src="/static/highlighter/script/shCore.js"></script>
+<script type="text/javascript" src="/static/highlighter/script/shBrushJava.js"></script>
+<script type="text/javascript" src="/static/highlighter/script/shBrushGo.js"></script>
+<script type="text/javascript" src="/static/highlighter/script/shBrushCSharp.js"></script>
+<script type="text/javascript" src="/static/highlighter/script/shBrushCpp.js"></script>
+<script type="text/javascript" src="/static/highlighter/script/shBrushSql.js"></script>
+<script type="text/javascript" src="/static/highlighter/script/shBrushJScript.js"></script>
+<link type="text/css" rel="stylesheet" href="/static/highlighter/style/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="/static/highlighter/style/shThemeDefault.css"/>
+<script type="text/javascript">
+    SyntaxHighlighter.config.clipboardSwf = '/static/highlighter/script/clipboard.swf';
+    SyntaxHighlighter.all();
+</script>
+{{template "footer"}}
+</body>
+</html>

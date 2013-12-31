@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>文章列表</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/static/css/admin.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/static/js/jquery.js"></script> 
+<script type="text/javascript" src="/static/js/admin.js"></script> 
+
+</head>
+<body style="background:#fff;">
+<div id="main">
+<h2>文章列表</h2>
+<div class="content">
+	<table width="600" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+	  <tr>
+		<td height="30"><select name="cid" id="cid" class="select" style="width:180px;">
+	<option selected="selected" value="0">==请选择栏目==</option>
+  {{range .classlist}}
+	<option value="{{.Id}}">{{.Cname}}</option>
+  {{end}}
+</select></td>
+		</tr>
+	</table>
+  <table width="100%" border="0" align="left" cellpadding="1" cellspacing="1" style="background:#D4ECF5;" class="list">
+    <tr>
+      <th width="44%" height="35" bgcolor="#ADE2F2"><div align="left" style="margin-left:2px;">标题</div></th>
+      <th width="12%" bgcolor="#ADE2F2"><div align="center">时间</div></th>
+      <th width="11%" bgcolor="#ADE2F2"><div align="center">栏目</div></th>
+      <th width="9%" bgcolor="#ADE2F2"><div align="center">添加人</div></th>
+      <th width="9%" bgcolor="#ADE2F2"><div align="center">点击量</div></th>
+      <th width="8%" bgcolor="#ADE2F2"><div align="center">编辑</div></th>
+      <th width="7%" bgcolor="#ADE2F2"><div align="center">删除</div></th>
+    </tr>
+	<div id="show">
+	 {{range .newslist}}
+    <tr>
+      <td height="30"><a href="/view/{{.Id}}" target="_blank" style="margin-left:5px;">{{.Title}}</a></td>
+      <td><div align="center">{{dateformat .Addtime "2006-01-02 15:04:05"}}</div></td>
+      <td><div align="center">{{.Cid}}</div></td>
+      <td><div align="center">{{.Poster}}</div></td>
+      <td><div align="center">{{.Views}}</div></td>
+      <td><div align="center"><a href="../news/edit/{{.Id}}">编辑</a></div></td>
+      <td><div align="center"><a id="list_del_0" class="edit" href="../news/delete/{{.Id}}" onclick="javascript:return confirm('此操作不可恢复，确认要删除此内容吗？')">删除</span></a></div></td>
+    </tr>
+	{{end}}
+  
+  	
+</div>
+	
+    <tr>
+      <td height="30" colspan="7" bgcolor="#ffffff" align="left">
+      <div id="pagenavi">
+       {{str2html .pager}}
+        </div>
+       </td>
+    </tr>
+  </table>
+</div>
+</div>
+</body>
+</html>

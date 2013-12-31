@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>添加文章</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/static/css/admin.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/static/js/jquery.js"></script> 
+<script type="text/javascript" src="/static/js/admin.js"></script> 
+</head>
+<body style="background:#f9f9f9;">
+<form method="post" id="Form1" onsubmit="return addnews();">
+<div id="main">
+<h2>添加 编辑文章</h2>
+<div class="content" style="margin-top:0px;">
+  <table width="90%" border="0" align="center" cellpadding="1" cellspacing="1">
+    <tr>
+      <td height="20">&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="76" height="40">分类：</td>
+      <td>
+	  <select name="cid" id="cid" class="select">
+    	<option value="0">==请选择分类==</option>
+      <option selected="selected" value="0">==请选择栏目==</option>
+      {{range .classlist}}
+      <option value="{{.Id}}">{{.Cname}}</option>
+      {{end}}
+    </select> 
+    </td>
+    </tr>
+    <tr>
+      <td height="40">作者<br /></td>
+      <td><input name="anthor" type="text" id="anthor" class="input" style="width:130px" value="阿布" value="{{.newsinfo.Anthor}}" />
+      </td>
+      </tr>
+
+    <tr>
+      <td height="40">标题：</td>
+      <td><input name="title" type="text" id="title" class="input" style="width:500px" value="{{.newsinfo.Title}}" /></td>
+      </tr>
+    <tr>
+      <td valign="top">内容：</td>
+      <td valign="top"><textarea id="editor_id" name="content" style="width:98%;height:520px;visibility:hidden;">{{.newsinfo.Content}}</textarea>  </td>
+    </tr>
+    <tr height="38">
+      <td valign="top">来源：</td>
+      <td valign="top">
+      <select name="source" id="source" class="select">
+           <option value="站内" selected="selected">站内</option>
+           <option value="互联网">互联网</option>
+         </select></td>
+    </tr>   
+    <tr>
+      <td height="70">&nbsp;</td>
+      <td><input type="submit" name="enter" value="保存文章" id="enter" class="button bghuang" /> <input type="button" class="button" value="返回列表"  onclick="self.location.href='/webadmin/news/list';"/></td>
+    </tr>
+  </table>
+</div>
+</div>
+</form>
+<script type="text/javascript" src="/static/editor/kindeditor.js"></script>
+<script type="text/javascript">
+    var editor;
+    KindEditor.ready(function (K) {
+        editor = K.create('#editor_id', {
+            resizeType: 1,
+            filterMode: false,
+            allowImageUpload: true,
+            allowFlashUpload: false,
+            allowMediaUpload: false,
+            allowFileManager: false,
+            shadowMode: false,
+            pasteType:2,
+            uploadJson: '/uploadapi/v1',
+            themeType: 'simple',
+            newlineTag:'p',
+            afterCreate: function () {
+                K.ctrl(this.edit.iframe.get(0).contentWindow.document, 13, function () {
+                    $("#enter").click();
+                });
+            },
+            afterBlur: function(){this.sync();},
+            items: ['source', 'fontname', 'fontsize', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline', 'strikethrough', '|', 'removeformat', 'subscript', 'superscript', '|',
+             'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist', 'insertunorderedlist', '/', 'undo', 'redo', 'cut', 'copy', 'paste', 'plainpaste', 'wordpaste','|',
+             'hr', 'link', 'unlink', 'image', 'multiimage', 'emoticons', 'baidumap', 'map', '|', 'selectall', 'print', 'fullscreen']
+        });
+    });
+</script>
+</body>
+</html>

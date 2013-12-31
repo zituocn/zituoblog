@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>页面不存在</title>
+<style type="text/css">
+*{padding:0px;margin:0px;font-size:12px;font-family:Tahoma;}
+body{ background:#fff;}
+#error{background:#2290CF; margin:280px auto;width:520px;color:#fff;padding:10px 15px 10px 15px; overflow:hidden;}
+#error a{color:#FFFF00;}
+#error h2{font-size:16px;font-family:'Microsoft YaHei';}
+#error ul{margin:10px 20px 10px 26px;}
+#error li{line-height:22px;}
+#error .info{font-style:italic;}
+</style>
+</head>
+<body>
+<div id="error">
+<h2>对不起，您所访问的页面不存在...</h2>
+<ul>
+<li><a href="http://zituo.net">立即访问首页</a></li>
+<li>3秒后自动返回首页...</li>
+<li>管理员QQ：301109640 </li>
+<li>电子邮箱：abu#zituo.net</li>
+<li>出错时间：{{dateformat .datetime "2006-01-02 15:04"}} </li>
+</ul>
+<script style="text/javascript">
+    setTimeout("jumppage()", 3000);
+    function jumppage() {
+        top.location.href = "http://zituo.net";
+    }
+</script> 
+
+</div>
+</body>
+</html>

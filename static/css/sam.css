@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, th, td{
+	border: 0;
+	margin: 0;
+	padding: 0;
+	font-size:14px;
+	font-family:Tahoma,Helvetica,Arial,'宋体',sans-serif;
+	color:#333;
+}
+body{background:#fff;line-height:1;}
+img {border:0; outline:0; }
+ol, ul, li {list-style: none; vertical-align:text-bottom}
+a img{border:none;}
+h1, h2, h3, h4, h5, h6 {clear: both;font-weight: normal;}
+
+del{ text-decoration: line-through;}
+a img {	border: none;}
+
+a,a:link {color: #0000ff;	text-decoration:underline}
+a:active,a:hover {	color:#ff4b33;}
+a:hover{-moz-transition:all 0.25s ease-in 0s;-webkit-transition:all 0.25s ease-in 0s;transition:all 0.25s ease-in 0s}
+
+.cls{clear:both; overflow:hidden;height:0;display:block;visibility:hidden;_zoom:1;}
+
+.box{width:98%;margin:0 auto;clear:both;}
+
+.box h1{font-family:'Microsoft YaHei';font-size:18px;color:#000;font-weight:bold;}
+
+.logo{margin-top:10px;border:1px #999 solid;border-width:0 0 1px 0;padding-bottom:6px;}
+.logo span{ display:none;}
+.logo a{ background:url(../img/zituo.gif) no-repeat;display:block;widht:170px;height:32px;}
+
+#nav{width:100%;float:left;clear:both;margin-top:6px;margin-bottom:6px;}
+#nav ul{float:left;width:100%;}
+#nav li{float:left;padding:0 5px 0 5px; text-align:center;margin-right:5px;line-height:22px;}
+#nav li a{font-family:'Microsoft YaHei';font-size:14px;}
+
+
+.list{width:100%;margin:0 auto;clear:both;}
+
+.list .title{ background:#eeeeee;height:32px;line-height:32px;padding-left:6px;color:#000;font-size:16px;font-family:'Microsoft YaHei';border:1px #ccc solid;border-width:1px 0 1px 0;}
+.list ul{margin:3px 5px 3px 5px;}
+.list ul li{line-height:26px; list-style:square;margin-left:15px;padding-left:2px;}
+.list ul li span{margin-left:6px;font-size:12px;font-family:Arial;color:#ff3300;}
+.list ul li a{font-size:14px;}
+
+.info{width:100%;margin:0 auto;clear:both;}
+.info .title{font-weight:bold; background:#eeeeee;height:32px;line-height:32px;padding-left:6px;color:#000;font-size:16px;font-family:'Microsoft YaHei';border:1px #ccc solid;border-width:1px 0 1px 0;}
+.info .about{font-family:Tahoma;font-size:12px;color:#555;padding-left:6px;margin-top:10px;}
+.info .about span{font-size:12px;color:#666;margin-right:12px;}
+.info .text{margin:10px 6px 20px 10px; line-height:30px;}
+.info .text strong,.info .text b{font-weight:bold;}
+.info .text p{margin:10px 0 10px 0;}
+
+#footer{margin:10px 0 10px 0; text-align:center;line-height:20px;font-size:12px;border-top:1px solid #999;padding-top:10px;}
+#footer a{font-size:12px;}
+#footer strong{font-size:12px;color:#666;}
+
+
+
+#pagenavi {margin:10px 0px 10px 6px;width:98%;float:left; }
+#pagenavi .page-numbers { color:#333; padding:0px 12px 0px; height:26px; line-height:27px; margin:0 4px 4px 0; font-size:12px; overflow:hidden; display:inline-block; text-decoration:none; background:#f6f6f6; -moz-border-radius:3px; -khtml-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(248, 248, 248, 1) 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(248, 248, 248, 1))); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f8f8f8', GradientType=0 );
+border:1px solid #ccc;}
+#pagenavi a:hover { color:#333; text-decoration:none; background:#fff; filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
+}
+#pagenavi span.current { color:#ff3300;font-weight:bold; background:#fff; filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#dddddd', GradientType=0 ); }
+#pagenavi a:active {  bottom:-2px; position:relative; }
+.page_navi span.dots { background:none; border:none;  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
+}
