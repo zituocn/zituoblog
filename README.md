@@ -17,5 +17,8 @@ my golang blog :)
 *	sam at 6617.com 请将at换成@
 *	QQ：301109640
 
+##说明
+*	此版已经不在能最新的beego 1.5中编译，请勿使用.
+
 ##LICENSE
 *	zituoblog is licensed under the Apache Licence, Version 2.0 [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html).
